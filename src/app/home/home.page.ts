@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+    constructor(public navCtrl: NavController, public router: Router) {}
+    
+    novoClienteRouter() {
+      this.router.navigate(['/home/cliente'])
+    }
 
+    novoClienteNavigate() {
+      this.navCtrl.navigateForward('/home/cliente');
+    }
 }
